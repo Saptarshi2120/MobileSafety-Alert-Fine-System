@@ -1,16 +1,75 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
+    min-width: 500px;
+    width: 80%;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border-radius: 30px 30px 0px 0px;
 }
-#webcam_feed {
-    align-items: center;
-    background-color: rgb(128, 128, 128);
-    padding: 10px;
-    
-}
+
 img {
-    width: inherit;
+    border: solid white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 70%;
+    box-shadow: 0px 0px 50px rgb(201, 201, 201);
+    transition: 0.5s;
+}
+
+img:hover {
+    webkit-filter: blur(4px);
+    /* Chrome, Safari, Opera*/
+    filter: blur(10px);
+}
+
+button {
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border-style: none;
+    transition: 0.2s;
+}
+
+select {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+h1 {
+    padding: 20px;
+}
+
+footer {
+    text-decoration: none;
+}
+
+.tools {
+    min-width: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border-radius: 0px 0px 30px 30px;
+}
+
+.line {
+    width: 2px;
+    height: 30px;
+    background-color: white;
 }

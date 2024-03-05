@@ -14,7 +14,7 @@ class webcam:
         self.video = cv2.VideoCapture(0)
         self.frametime = webcam.__getframetime(fps)
 
-
+    # bad practice! to handle it use try finally to release()
     def __del__(self) -> None:
         self.video.release()
 

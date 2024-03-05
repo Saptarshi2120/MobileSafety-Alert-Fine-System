@@ -10,17 +10,44 @@
 </head>
 
 <body>
-    <main>
-        <h1>WEBCAM feed</h1>
-        <div id="webcam_feed">
-            <img src="{% url 'video' %}" id="webcam">
+    <center>
+        <main>
+            <h1>WEBCAM</h1>
+            <img src="{%static 'assets/noise.gif'%}" alt="Camera" id="cam0">
+        </main>
+
+        <div class="tools">
+            <select name="performance" id="perf_selector">
+                <option value="0">HIGH SPEED</option>
+                <option value="1">ACCURATE</option>
+                <option value="2">BALANCED</option>
+            </select>
+            <button>go</button>
+            <div class="line"></div>
+            <button id="btn_pause" onclick="pauseFunction()" value="0">StartVideo</button>
         </div>
-        <select name="performance" id="perf_selector">
-            <option value="0">HIGH SPEED</option>
-            <option value="1">ACCURATE</option>
-            <option value="2">BALANCED</option>
-        </select>
-    </main>
+
+        <footer id="video_analysis">
+            <a href="analyse">Video Analyser</a>
+        </footer>
+        <script>
+            function pauseFunction() {
+                const btn = document.getElementById("btn_pause")
+                const img = document.getElementById("cam0")
+                if (btn.value == "1") {
+                    console.log("BUTTONCLICK, pausing....");
+                    btn.value = "0"
+                    btn.innerText = "StartVideo"
+                    img.src = "/static/assets/noise.gif"
+                }
+                else {
+                    btn.value = "1"
+                    btn.innerText = "PauseVideo"
+                    console.log("Button play clicked!");
+                    img.src = "/video"
+                }
+            }
+        </script>
 </body>
 
 </html>
