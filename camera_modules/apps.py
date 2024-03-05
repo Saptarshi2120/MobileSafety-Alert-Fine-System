@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WebcamConfig(AppConfig):
+class CameraModulesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'webcam'
+    name = 'camera_modules'

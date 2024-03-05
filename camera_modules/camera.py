@@ -1,6 +1,7 @@
-from imutils.video import VideoStream
-import imutils
-import cv2, os, urllib.request
+# from imutils.video import VideoStream
+# import imutils
+# import os, urllib.request
+import cv2
 
 
 class webcam:
