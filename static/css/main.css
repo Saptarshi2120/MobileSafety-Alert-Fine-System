@@ -1,0 +1,16 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+#webcam_feed {
+    align-items: center;
+    background-color: rgb(128, 128, 128);
+    padding: 10px;
+    
+}
+img {
+    width: inherit;
+}
