@@ -14,4 +14,4 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/username/safewalk.git
+git clone https://github.com/Saptarshi2120/MobileSafety-Alert-Fine-System
