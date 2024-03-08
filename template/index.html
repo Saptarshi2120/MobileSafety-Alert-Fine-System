@@ -7,12 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>WebCam</title>
+    <style>
+    </style>
 </head>
 
 <body>
     <center>
         <main>
-            <h1>WEBCAM</h1>
+            <h1>SafeWalk</h1>
+            <div class="container">
+                <div class="display-date">
+                    <span id="day">day</span>,
+                    <span id="daynum">00</span>
+                    <span id="month">month</span>
+                    <span id="year">0000</span>
+                </div>
+                <div class="line"></div>
+                <div class="display-time"></div>
+            </div>
             <img src="{%static 'assets/noise.gif'%}" alt="Camera" id="cam0">
         </main>
 
@@ -31,6 +43,60 @@
             <a href="analyse">Video Analyser</a>
         </footer>
         <script>
+            const displayTime = document.querySelector(".display-time");
+            // Time
+            function showTime() {
+                let time = new Date();
+                displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
+                setTimeout(showTime, 1000);
+            }
+
+            showTime();
+
+            // Date
+            function updateDate() {
+                let today = new Date();
+
+                // return number
+                let dayName = today.getDay(),
+                    dayNum = today.getDate(),
+                    month = today.getMonth(),
+                    year = today.getFullYear();
+
+                const months = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
+                ];
+                const dayWeek = [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                ];
+                // value -> ID of the html element
+                const IDCollection = ["day", "daynum", "month", "year"];
+                // return value array with number as a index
+                const val = [dayWeek[dayName], dayNum, months[month], year];
+                for (let i = 0; i < IDCollection.length; i++) {
+                    document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+                }
+            }
+
+            updateDate();
+
             function pauseFunction() {
                 const btn = document.getElementById("btn_pause")
                 const img = document.getElementById("cam0")
